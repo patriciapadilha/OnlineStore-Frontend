@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.input-position {
+  display: flex;
+  justify-content: center;
+}
+
+.input-search {
+  border: black 1px solid;
+  border-radius: 18px;
+  height: 30px;
+  margin: 10px;
+  text-align: center;
+  width: 90%;
+}
+
+h2 {
+  text-align: center;
+}
