@@ -3,11 +3,6 @@
   padding: 0;
 }
 
-.input-position {
-  display: flex;
-  justify-content: center;
-}
-
 .input-search {
   border: black 1px solid;
   border-radius: 18px;
@@ -19,4 +14,25 @@
 
 h2 {
   text-align: center;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-search {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-categories {
+  border: 1px solid black;
+  margin: 10px;
+  max-width: 20%;
+  padding: 15px;
+}
+
+ul {
+  list-style: none;
 }
