@@ -15,7 +15,6 @@ export default class CategoriesList extends Component {
       this.setState({
         categories: response,
       });
-      console.log(response);
     });
   }
 

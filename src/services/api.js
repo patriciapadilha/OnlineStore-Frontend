@@ -30,3 +30,19 @@ export async function getProductsFromCategoryAndQuery(categoryId, query) {
   const PRODUCTS_FROM_CATEGORIES_ENDPOINT = `/search?category=${categoryId}&q=${query}`;
   return customFetch(PRODUCTS_FROM_CATEGORIES_ENDPOINT, productsFromCategoriesCallback);
 }
+
+//  Callback para o tratamento dos dados da getProductsByQuery
+function getProductsByQueryCallback({ results }) {
+  return results.map(({ title, price, thumbnail }) => (
+    {
+      title,
+      price,
+      thumbnail,
+    }
+  ));
+}
+
+export async function getProductsByQuery(query) {
+  const PRODUCTS_FROM_QUERY_ENDPOINT = `/search?q=${query}`;
+  return customFetch(PRODUCTS_FROM_QUERY_ENDPOINT, getProductsByQueryCallback);
+}
