@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.input-search {
+  border: black 1px solid;
+  border-radius: 18px;
+  height: 30px;
+  margin: 10px;
+  text-align: center;
+  width: 90%;
+}
+
+h2 {
+  text-align: center;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-search {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-categories {
+  border: 2px solid black;
+  margin: 10px;
+  max-width: 20%;
+  padding: 15px;
+}
+
+ul {
+  list-style: none;
+}
