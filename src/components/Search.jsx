@@ -10,7 +10,8 @@ export default class Search extends Component {
     super();
     this.state = {
       inputSearch: '',
-      productsCard: undefined,
+      productsCard: [],
+      didSearch: false,
     };
     this.onInputChange = this.onInputChange.bind(this);
     this.fetchGetProductsByQuery = this.fetchGetProductsByQuery.bind(this);
@@ -27,11 +28,12 @@ export default class Search extends Component {
     console.log(response);
     this.setState({
       productsCard: response,
+      didSearch: true,
     });
   }
 
   render() {
-    const { inputSearch, productsCard } = this.state;
+    const { inputSearch, productsCard, didSearch } = this.state;
     return (
       <div className="container-search">
         <div>
@@ -52,28 +54,26 @@ export default class Search extends Component {
             Pesquisar
           </button>
         </div>
-        {
-          !productsCard
-          ? (
+        { !didSearch
+          && (
             <h2 data-testid="home-initial-message">
               Digite algum termo de pesquisa ou escolha uma categoria.
-            </h2>
-          )
-          : productsCard.length > 0
-          ? (
-            productsCard.map(({title, thumbnail, price}, key) => (
-              <Card
-                key={ key }
-                title={ title }
-                thumbSrc={ thumbnail }
-                price={ price }
-              />
-            ))
-          )
-          :
-          (
-            <p>Nenhum produto foi encontrado</p>
-          )
+            </h2>)}
+        {
+          didSearch && productsCard.length === 0
+            ? (
+              <p>Nenhum produto foi encontrado</p>
+            )
+            : (
+              productsCard.map(({ title, thumbnail, price }, key) => (
+                <Card
+                  key={ key }
+                  title={ title }
+                  thumbSrc={ thumbnail }
+                  price={ price }
+                />
+              ))
+            )
         }
       </div>
     );
