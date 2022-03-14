@@ -65,12 +65,13 @@ export default class Search extends Component {
               <p>Nenhum produto foi encontrado</p>
             )
             : (
-              productsCard.map(({ title, thumbnail, price }, key) => (
+              productsCard.map(({ title, thumbnail, price, id }, key) => (
                 <Card
                   key={ key }
                   title={ title }
                   thumbSrc={ thumbnail }
                   price={ price }
+                  id={ id }
                 />
               ))
             )
