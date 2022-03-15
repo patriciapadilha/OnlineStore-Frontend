@@ -22,7 +22,6 @@ export default class ProductDetail extends Component {
 
   render() {
     const { product } = this.state;
-    // console.log(this.state.product);
     return !product ? (
       <p>Carregando...</p>
     ) : (
