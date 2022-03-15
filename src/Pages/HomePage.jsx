@@ -44,8 +44,9 @@ export default class HomePage extends Component {
 
   async fetchGetProductsFromCategoryAndQuery(_id) {
     const response = await api.getProductsFromCategoryAndQuery(_id, '');
+    const { results } = response;
     this.setState({
-      productsCardCategory: [...response],
+      productsCardCategory: [...results],
       productsCardInput: [],
     });
   }
@@ -53,8 +54,9 @@ export default class HomePage extends Component {
   async fetchGetProductsByQuery() {
     const { inputSearch } = this.state;
     const response = await api.getProductsByQuery(inputSearch);
+    const { results } = response;
     this.setState({
-      productsCardInput: [...response],
+      productsCardInput: [...results],
       inputSearch: '',
       productsCardCategory: [],
     });

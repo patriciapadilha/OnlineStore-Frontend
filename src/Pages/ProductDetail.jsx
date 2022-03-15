@@ -25,9 +25,8 @@ export default class ProductDetail extends Component {
     return !product ? (
       <p>Carregando...</p>
     ) : (
-      <div data-testid="product-detail-name">
-        <h3>
-          Titulo:
+      <div>
+        <h3 data-testid="product-detail-name">
           { product.title }
         </h3>
         <h3>

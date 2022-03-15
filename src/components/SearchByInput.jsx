@@ -6,12 +6,13 @@ export default class SearchByInput extends Component {
   render() {
     const { productsCardInput } = this.props;
     const products = (
-      productsCardInput.map(({ title, thumbnail, price }, key) => (
+      productsCardInput.map(({ title, thumbnail, price, id }, key) => (
         <Card
           key={ key }
           title={ title }
           thumbSrc={ thumbnail }
           price={ price }
+          id={ id }
         />
       ))
     );
@@ -28,5 +29,6 @@ SearchByInput.propTypes = {
     title: PropTypes.string,
     thumbnail: PropTypes.string,
     price: PropTypes.number,
+    id: PropTypes.string,
   })).isRequired,
 };
