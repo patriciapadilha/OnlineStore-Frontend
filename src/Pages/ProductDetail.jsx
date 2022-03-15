@@ -23,7 +23,7 @@ export default class ProductDetail extends Component {
   render() {
     const { product } = this.state;
     return !product ? (
-      <p>Carregando...</p>
+      <p>Carregando..</p>
     ) : (
       <div>
         <h3 data-testid="product-detail-name">
