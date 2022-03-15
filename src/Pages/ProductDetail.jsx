@@ -6,26 +6,43 @@ export default class ProductDetail extends Component {
   constructor() {
     super();
     this.state = {
-      product: {},
+      product: '',
     };
   }
 
   componentDidMount() {
     const { params } = this.props;
     const { id } = params;
-    api.getProductsDetailsById(id).then((response) => {
-      this.setState = ({
-        product: { ...response },
-      });
-    });
-    console.log(this.state.product);
+    api.getProductsDetailsById(id).then((response) => (
+      this.setState({
+        product: response,
+      })
+    ));
   }
 
   render() {
     const { product } = this.state;
-    return (
-      <div>
-        <h2> tes </h2>
+    return !product ? (
+      <p>Carregando...</p>
+    ) : (
+      <div data-testid="product-detail-name">
+        <h3>
+          Titulo:
+          { product.title }
+        </h3>
+        <h3>
+          Preço:
+          { product.price }
+        </h3>
+        <img src={ product.thumbnail } alt={ product.title } />
+        <div>
+          Especificações técnicas:
+          {product.attributes.map((atributo, key) => (
+            <div key={ key }>
+              <p>{ `${atributo.name}: ${atributo.value_name}` }</p>
+            </div>
+          ))}
+        </div>
       </div>
     );
   }

@@ -5,7 +5,6 @@ import * as api from '../services/api';
 import Search from '../components/Search';
 import AsideCategories from '../components/AsideCategories';
 import Button from '../components/Button';
-import ProductDetail from './ProductDetail';
 
 // Cria O input para busca e o texto solicitado
 export default class HomePage extends Component {
@@ -85,7 +84,6 @@ export default class HomePage extends Component {
           fetchGetProductsByQuery={ this.fetchGetProductsByQuery }
         />
         <Button imgsrc={ imgsrc } />
-        <ProductDetail />
       </main>
     );
   }
