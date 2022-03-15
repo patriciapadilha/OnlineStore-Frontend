@@ -22,15 +22,8 @@ export async function getCategories() {
 }
 
 //  Callback para o tratamento dos dados da getProductsFromCategoryAndQuery
-function productsFromCategoriesAndQueryCallback({ results }) {
-  return results.map(({ title, price, thumbnail, id }) => (
-    {
-      title,
-      price,
-      thumbnail,
-      id,
-    }
-  ));
+function productsFromCategoriesAndQueryCallback(data) {
+  return data;
 }
 
 export async function getProductsFromCategoryAndQuery(categoryId, query) {
