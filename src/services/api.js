@@ -3,7 +3,7 @@
   Parâmetros: URL principal da api, endpoint específica da api
 */
 
-function customFetch(ENDPOINT) {
+async function customFetch(ENDPOINT) {
   const BASE_URL = 'https://api.mercadolibre.com/sites/MLB';
   return fetch(BASE_URL + ENDPOINT)
     .then((response) => response.json())
