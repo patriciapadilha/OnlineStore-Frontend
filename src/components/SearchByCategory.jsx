@@ -7,12 +7,13 @@ export default class SearchByCategory extends Component {
     const { productsCardCategory } = this.props;
 
     const products = (
-      productsCardCategory.map(({ title, thumbnail, price }, key) => (
+      productsCardCategory.map(({ title, thumbnail, price, id }, key) => (
         <Card
           key={ key }
           title={ title }
           thumbSrc={ thumbnail }
           price={ price }
+          id={ id }
         />
       ))
     );
@@ -29,5 +30,6 @@ SearchByCategory.propTypes = {
     title: PropTypes.string,
     thumbnail: PropTypes.string,
     price: PropTypes.number,
+    id: PropTypes.string,
   })).isRequired,
 };

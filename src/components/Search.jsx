@@ -33,6 +33,9 @@ export default class Search extends Component {
           >
             Pesquisar
           </button>
+          <h2 data-testid="home-initial-message">
+            Digite algum termo de pesquisa ou escolha uma categoria.
+          </h2>
         </form>
         <SearchByInput
           productsCardInput={ productsCardInput }
@@ -50,6 +53,7 @@ Search.propTypes = {
     title: PropTypes.string,
     thumbnail: PropTypes.string,
     price: PropTypes.number,
+    id: PropTypes.string,
   })).isRequired,
   inputSearch: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
@@ -57,6 +61,7 @@ Search.propTypes = {
     title: PropTypes.string,
     thumbnail: PropTypes.string,
     price: PropTypes.number,
+    id: PropTypes.string,
   })).isRequired,
   fetchGetProductsByQuery: PropTypes.func.isRequired,
 };
