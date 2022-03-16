@@ -27,7 +27,9 @@ export default class ProductDetail extends Component {
     ) : (
       <div>
         <h3 data-testid="product-detail-name">
-          { product.title }
+          <p data-testid="shopping-cart-product-name">
+            { product.title }
+          </p>
         </h3>
         <h3>
           Preço:
@@ -42,6 +44,23 @@ export default class ProductDetail extends Component {
             </div>
           ))}
         </div>
+        <button
+          data-testid="product-detail-add-to-cart"
+          type="button"
+          name="addToCart"
+          onClick={ this.addToCart }
+        >
+          Adicionar ao carrinho
+        </button>
+        <label htmlFor="quantity" datatestid="shopping-cart-product-quantity">
+          Quantidade:
+          <input
+            type="number"
+            name="quantity"
+            className="quantity"
+            defaultValue={ 1 }
+          />
+        </label>
       </div>
     );
   }
