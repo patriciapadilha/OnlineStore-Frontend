@@ -13,6 +13,9 @@ export default class Search extends Component {
       handleChange,
       productsCardInput,
       fetchGetProductsByQuery,
+      itemsCart,
+      totalPrice,
+      addItem,
     } = this.props;
     return (
       <div className="container-search">
@@ -39,9 +42,15 @@ export default class Search extends Component {
         </form>
         <SearchByInput
           productsCardInput={ productsCardInput }
+          itemsCart={ itemsCart }
+          totalPrice={ totalPrice }
+          addItem={ addItem }
         />
         <SearchByCategory
           productsCardCategory={ productsCardCategory }
+          itemsCart={ itemsCart }
+          totalPrice={ totalPrice }
+          addItem={ addItem }
         />
       </div>
     );
@@ -64,4 +73,7 @@ Search.propTypes = {
     id: PropTypes.string,
   })).isRequired,
   fetchGetProductsByQuery: PropTypes.func.isRequired,
+  itemsCart: PropTypes.node.isRequired,
+  totalPrice: PropTypes.number.isRequired,
+  addItem: PropTypes.func.isRequired,
 };

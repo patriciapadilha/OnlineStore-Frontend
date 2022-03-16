@@ -4,16 +4,20 @@ import Card from './Card';
 
 export default class SearchByCategory extends Component {
   render() {
-    const { productsCardCategory } = this.props;
+    const { productsCardCategory, itemsCart, totalPrice, addItem } = this.props;
 
     const products = (
-      productsCardCategory.map(({ title, thumbnail, price, id }, key) => (
+      productsCardCategory.map((product, key) => (
         <Card
           key={ key }
-          title={ title }
-          thumbSrc={ thumbnail }
-          price={ price }
-          id={ id }
+          title={ product.title }
+          thumbSrc={ product.thumbnail }
+          price={ product.price }
+          id={ product.id }
+          availableQuantity={ product.available_quantity }
+          itemsCart={ itemsCart }
+          totalPrice={ totalPrice }
+          addItem={ addItem }
         />
       ))
     );
@@ -31,5 +35,9 @@ SearchByCategory.propTypes = {
     thumbnail: PropTypes.string,
     price: PropTypes.number,
     id: PropTypes.string,
+    availableQuantity: PropTypes.number,
   })).isRequired,
+  itemsCart: PropTypes.node.isRequired,
+  totalPrice: PropTypes.number.isRequired,
+  addItem: PropTypes.func.isRequired,
 };
