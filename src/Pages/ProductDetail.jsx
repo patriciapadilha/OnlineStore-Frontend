@@ -31,12 +31,12 @@ export default class ProductDetail extends Component {
   render() {
     const { product, quantity } = this.state;
     const { title, price, thumbnail } = product;
-    const { addItem, itemsCart, totalPrice } = this.props;
+    const { addItem } = this.props;
     return !product ? (
       <p>Carregando..</p>
     ) : (
       <div>
-        <Button  />
+        <Button />
         <h3 data-testid="product-detail-name">
           <p data-testid="shopping-cart-product-name">
             { title }
@@ -60,7 +60,11 @@ export default class ProductDetail extends Component {
           type="button"
           name="addToCart"
           onClick={ () => addItem({
-            title, price, thumbnail, quantity, available_quantity: product.available_quantity,
+            title,
+            price,
+            thumbnail,
+            quantity,
+            available_quantity: product.available_quantity,
           }) }
         >
           Adicionar ao carrinho
@@ -85,6 +89,4 @@ ProductDetail.propTypes = {
     id: PropTypes.string,
   }).isRequired,
   addItem: PropTypes.func.isRequired,
-  itemsCart: PropTypes.arrayOf(PropTypes.object).isRequired,
-  totalPrice: PropTypes.number.isRequired,
 };

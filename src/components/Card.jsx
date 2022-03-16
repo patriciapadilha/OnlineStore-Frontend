@@ -15,8 +15,7 @@ export default class Card extends Component {
   }
 
   render() {
-    const { title, thumbSrc, price, id,
-      itemsCart, totalPrice, addItem, availableQuantity } = this.props;
+    const { title, thumbSrc, price, id, addItem, availableQuantity } = this.props;
     const { quantity } = this.state;
     return (
       <div>
@@ -34,7 +33,11 @@ export default class Card extends Component {
             type="button"
             name="addToCart"
             onClick={ () => addItem({
-              title, price, thumbnail: thumbSrc, quantity, available_quantity: availableQuantity,
+              title,
+              price,
+              thumbnail: thumbSrc,
+              quantity,
+              available_quantity: availableQuantity,
             }) }
           >
             Adicionar ao carrinho
@@ -61,7 +64,5 @@ Card.propTypes = {
   price: PropTypes.number.isRequired,
   id: PropTypes.string.isRequired,
   availableQuantity: PropTypes.number.isRequired,
-  itemsCart: PropTypes.arrayOf(PropTypes.object).isRequired,
-  totalPrice: PropTypes.number.isRequired,
   addItem: PropTypes.func.isRequired,
 };

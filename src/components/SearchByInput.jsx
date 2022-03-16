@@ -36,7 +36,7 @@ SearchByInput.propTypes = {
     id: PropTypes.string,
     availableQuantity: PropTypes.number,
   })).isRequired,
-  itemsCart: PropTypes.arrayOf(PropTypes.object).isRequired,
+  itemsCart: PropTypes.node.isRequired,
   totalPrice: PropTypes.number.isRequired,
   addItem: PropTypes.func.isRequired,
 };

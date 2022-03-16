@@ -73,7 +73,7 @@ Search.propTypes = {
     id: PropTypes.string,
   })).isRequired,
   fetchGetProductsByQuery: PropTypes.func.isRequired,
-  itemsCart: PropTypes.arrayOf(PropTypes.object).isRequired,
+  itemsCart: PropTypes.node.isRequired,
   totalPrice: PropTypes.number.isRequired,
   addItem: PropTypes.func.isRequired,
 };

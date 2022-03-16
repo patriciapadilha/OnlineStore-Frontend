@@ -96,7 +96,7 @@ export default class HomePage extends Component {
 
 HomePage.propTypes = {
   imgsrc: PropTypes.string.isRequired,
-  itemsCart: PropTypes.arrayOf(PropTypes.object).isRequired,
-  totalPrice: PropTypes.string.isRequired,
+  itemsCart: PropTypes.node.isRequired,
+  totalPrice: PropTypes.number.isRequired,
   addItem: PropTypes.func.isRequired,
 };
