@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import HomePage from './Pages/HomePage';
-import ShowProduct from './Pages/ShoppingCart/ShowProduct';
+import ShowProduct from './Pages/ShowProduct';
 import ProductDetail from './Pages/ProductDetail';
 import './App.css';
 
@@ -18,12 +18,12 @@ class App extends Component {
     this.addItem = this.addItem.bind(this);
   }
 
-  addItem(event) {
+  addItem(itemObj) {
     this.setState((previousState) => {
-      const newItems = [...previousState.itemsCart, event];
+      const newItems = [...previousState.itemsCart, itemObj];
       return {
         itemsCart: newItems,
-        totalPrice: previousState.totalPrice + event.price,
+        totalPrice: previousState.totalPrice + (itemObj.price * itemObj.quantity),
       };
     });
   }
@@ -67,7 +67,7 @@ class App extends Component {
       newItems.splice(index, 1);
       return {
         itemsCart: newItems,
-        totalPrice: previousState.totalPrice - newItem.price * newItem.quantity,
+        totalPrice: previousState.totalPrice - (newItem.price * newItem.quantity),
       };
     });
   }
