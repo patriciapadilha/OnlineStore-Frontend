@@ -27,32 +27,30 @@ export default class Card extends Component {
             Ver detalhes:
           </div>
         </Link>
-        <div data-testid="product-add-to-cart">
-          <button
-            data-testid="product-add-to-cart"
-            type="button"
-            name="addToCart"
-            onClick={ () => addItem({
-              title,
-              price,
-              thumbnail: thumbSrc,
-              quantity,
-              available_quantity: availableQuantity,
-            }) }
-          >
-            Adicionar ao carrinho
-          </button>
-          <label htmlFor="quantity" datatestid="shopping-cart-product-quantity">
-            Quantidade:
-            <input
-              type="number"
-              name="quantity"
-              value={ quantity }
-              className="quantity"
-              onChange={ this.handleChange }
-            />
-          </label>
-        </div>
+        <button
+          data-testid="product-add-to-cart"
+          type="button"
+          name="addToCart"
+          onClick={ () => addItem({
+            title,
+            price,
+            thumbnail: thumbSrc,
+            quantity,
+            available_quantity: availableQuantity,
+          }) }
+        >
+          Adicionar ao carrinho
+        </button>
+        <label htmlFor="quantity" datatestid="shopping-cart-product-quantity">
+          Quantidade:
+          <input
+            type="number"
+            name="quantity"
+            value={ quantity }
+            className="quantity"
+            onChange={ this.handleChange }
+          />
+        </label>
       </div>
     );
   }
