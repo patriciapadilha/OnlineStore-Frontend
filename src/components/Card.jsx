@@ -3,8 +3,22 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 export default class Card extends Component {
+  constructor() {
+    super();
+    this.state = { quantity: 1 };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange({ target }) {
+    const { value } = target;
+    this.setState({ quantity: Number(value) });
+  }
+
   render() {
-    const { title, thumbSrc, price, id } = this.props;
+    const { title, thumbSrc, price, id,
+      itemsCart, totalPrice, addItem, availableQuantity } = this.props;
+    const { quantity } = this.state;
+    console.log(itemsCart);
     return (
       <div>
         <Link data-testid="product-detail-link" to={ `/product-detail/${id}` }>
@@ -19,7 +33,9 @@ export default class Card extends Component {
           data-testid="product-add-to-cart"
           type="button"
           name="addToCart"
-          onClick={ this.addToCart }
+          onClick={ () => addItem({
+            title, price, thumbSrc, quantity, availableQuantity,
+          }) }
         >
           Adicionar ao carrinho
         </button>
@@ -28,8 +44,9 @@ export default class Card extends Component {
           <input
             type="number"
             name="quantity"
+            value={ quantity }
             className="quantity"
-            defaultValue={ 1 }
+            onChange={ this.handleChange }
           />
         </label>
       </div>
@@ -42,4 +59,8 @@ Card.propTypes = {
   thumbSrc: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   id: PropTypes.string.isRequired,
+  availableQuantity: PropTypes.number.isRequired,
+  itemsCart: PropTypes.arrayOf(PropTypes.object).isRequired,
+  totalPrice: PropTypes.number.isRequired,
+  addItem: PropTypes.func.isRequired,
 };

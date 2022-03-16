@@ -63,7 +63,7 @@ export default class HomePage extends Component {
   }
 
   render() {
-    const { imgsrc } = this.props;
+    const { imgsrc, itemsCart, totalPrice, addItem } = this.props;
     const {
       categories,
       isChecked,
@@ -84,6 +84,9 @@ export default class HomePage extends Component {
           productsCardCategory={ productsCardCategory }
           handleChange={ this.handleChange }
           fetchGetProductsByQuery={ this.fetchGetProductsByQuery }
+          itemsCart={ itemsCart }
+          totalPrice={ totalPrice }
+          addItem={ addItem }
         />
         <Button imgsrc={ imgsrc } />
       </main>
@@ -91,4 +94,9 @@ export default class HomePage extends Component {
   }
 }
 
-HomePage.propTypes = { imgsrc: PropTypes.string.isRequired };
+HomePage.propTypes = {
+  imgsrc: PropTypes.string.isRequired,
+  itemsCart: PropTypes.arrayOf(PropTypes.object).isRequired,
+  totalPrice: PropTypes.string.isRequired,
+  addItem: PropTypes.func.isRequired,
+};

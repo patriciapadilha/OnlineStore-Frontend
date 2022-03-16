@@ -15,6 +15,7 @@ class App extends Component {
     this.increaseItemInCart = this.increaseItemInCart.bind(this);
     this.decreaseItemInCart = this.decreaseItemInCart.bind(this);
     this.removeItem = this.removeItem.bind(this);
+    this.addItem = this.addItem.bind(this);
   }
 
   addItem(event) {
