@@ -31,13 +31,17 @@ export default class ShowProduct extends Component {
           )
           : (
             <div>
-              { cart }
-              <h3>{ `Valor total de Compra R$ ${totalPrice.toFixed(2)}` }</h3>
-              <button
-                type="submit"
-              >
-                Finalizar Compra
-              </button>
+              <section className="itens-in-cart">
+                { cart }
+              </section>
+              <section className="finish-buy">
+                <h3>{ `Valor total de Compra R$ ${totalPrice.toFixed(2)}` }</h3>
+                <button
+                  type="submit"
+                >
+                  Finalizar Compra
+                </button>
+              </section>
             </div>
           )}
       </div>
