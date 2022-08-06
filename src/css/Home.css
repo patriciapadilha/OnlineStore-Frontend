@@ -1,18 +1,11 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-.input-search {
-  border: black 1px solid;
-  border-radius: 18px;
-  height: 30px;
-  margin: 10px;
-  text-align: center;
-  width: 90%;
-}
-
 h2 {
+  color: gray;
   text-align: center;
 }
 
@@ -21,18 +14,90 @@ main {
   justify-content: space-between;
 }
 
-.container-search {
-  display: flex;
-  flex-direction: column;
+.container-search input {
+  border: black 1px solid;
+  border-radius: 10px;
+  height: 30px;
+  margin: 10px;
+  text-align: center;
+  width: 90%;
 }
 
 .container-categories {
-  border: 2px solid black;
-  margin: 10px;
-  max-width: 20%;
+  background-color: rgb(226, 255, 138);
+  color: rgb(63, 63, 63);
   padding: 15px;
+  width: 20%;
 }
 
 ul {
   list-style: none;
 }
+
+.container-categories li {
+  margin-top: 25px;
+}
+
+.card-item {
+  align-items: center;
+  border: 1px solid gray;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  padding: 10px;
+  width: 250px;
+}
+
+.card-item button {
+  background-color: rgb(226, 255, 138);
+  border-radius: 5px;
+  height: 35px;
+  margin-bottom: 2px;
+  width: 100%;
+}
+
+.card-item button:hover {
+  background-color: rgb(188, 255, 2);
+}
+
+.quantity {
+  margin-top: 5px;
+}
+
+.quantity input {
+  border-radius: 5px;
+  height: 20px;
+  width: 50px;
+}
+
+.card {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 250px;
+}
+
+.card img {
+  width: 120px;
+}
+
+.card p {
+  color: black;
+  text-decoration: none;
+}
+
+.card a {
+  text-decoration: none;
+}
+
+.allProductsByCategory, .allProductsByInput {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+

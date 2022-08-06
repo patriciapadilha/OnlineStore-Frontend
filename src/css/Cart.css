@@ -1,0 +1,17 @@
+.container-item-cart {
+  border: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  width: 200px;
+}
+
+.container-item-cart button:nth-child( 1 ) {
+  align-self: flex-start;
+}
+
+.change-quantity {
+  align-self: center;
+  display: flex;
+}

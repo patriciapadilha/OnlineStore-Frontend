@@ -21,6 +21,7 @@ class App extends Component {
   addItem(itemObj) {
     this.setState((previousState) => {
       const newItems = [...previousState.itemsCart, itemObj];
+      alert('Produto adicionado ao carrinho');
       return {
         itemsCart: newItems,
         totalPrice: previousState.totalPrice + (itemObj.price * itemObj.quantity),
