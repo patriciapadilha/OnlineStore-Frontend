@@ -11,6 +11,15 @@
 
 ---
 ### Sobre o desenvolvimento:
-- Grupo;
+- Os requisitos obrigatórios foram desenvolvidos em GRUPO;
 
 ### Equipe:
+* [Débora Schuch](https://www.linkedin.com/in/deboraschuchdarosa/)
+* [Felipe Fraxe](https://www.linkedin.com/in/felipefraxe/)
+* [Guilherme Lara](https://www.linkedin.com/in/guilherme-lara-753230229/)
+* [Patricia Padilha](https://www.linkedin.com/in/patricia-padilha/o)
+
+--- 
+Estilização sendo desenvolvida individualmente
+![Tela](public/telaSearch.png)
+
