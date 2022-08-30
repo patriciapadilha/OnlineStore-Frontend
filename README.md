@@ -20,6 +20,9 @@
 * [Patricia Padilha](https://www.linkedin.com/in/patricia-padilha/o)
 
 --- 
+[Deploy](https://online-store-frontend.vercel.app/)
+
 Estilização sendo desenvolvida individualmente
+
 ![Tela](public/telaSearch.png)
 
